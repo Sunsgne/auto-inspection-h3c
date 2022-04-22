@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commands>
+	<!--普通指令-->
+	<command protocol="ssh,telnet"><![CDATA[dir]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display mad verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display memory]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display power-supply verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display stack members]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ip extcommunity-list]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display bgp peer vpnv4]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display bgp peer vpnv6]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ipsec sa]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ipsec policy]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display irf link]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display isis peer verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display isis peer]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display isis statistics]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display device manuinfo]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display isis brief]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display lldp neighbor-information verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display lldp neighbor-information]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display mpls ldp session]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ssl server-policy all]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display redundancy group]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display rip]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display route-policy]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display sslvpn session]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display stp root]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display vpn-peer]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display vrrp]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display blacklist all]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ftp-server]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ip http]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ip https]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display snmp-agent sys-info]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display snmp-agent community read]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display snmp-agent community write]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display acl resource]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display drv qacl_resource]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display qos-acl resource]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display arp timer aging]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display arp all count]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display arp static count]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display arp dynamic count]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display session statistics]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display debugging]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display patch information]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display patch-information]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display eth-trunk]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display hot-backup state]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display dhbk status]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display link-aggregation]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display ppp mp]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display nat statistics]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display logbuffer summary]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display lldp neighbor-information agent nearest-bridge verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display stp]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display device verbose]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display version]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display device]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display device detail]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display acl all]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display acl remaining entry]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display boot-loader]]></command>
+	<!--扩展指令的前置指令采集-->
+	<command protocol="ssh,telnet"><![CDATA[display transceiver interface]]></command>
+	<command protocol="ssh,telnet"><![CDATA[dir ?]]></command>
+	<command protocol="ssh,telnet"><![CDATA[display startup]]></command>
+
+	
+    <!--依赖关系说明：含光接口-->
+	<command protocol="ssh,telnet" depend_script="h3c_transceiver_interface.py"><![CDATA[display transceiver interface]]></command>
+    <!--依赖关系说明：dldp接口信息，适用于CMW3版本-->
+    <command protocol="ssh,telnet" depend_script="h3c_dldp_id.py"><![CDATA[display device]]></command>
+    <!--依赖关系说明：解析vpn_instance_routing_table命令-->
+    <command protocol="ssh,telnet" depend_script="h3c_vpn_instance.py"><![CDATA[display current-configuration | include ip vpn-instance]]></command>
+    <!--依赖关系说明：解析display device
+    本脚本生成的命令可以用于 内存利用率检查和acl资源信息的使用-->
+    <command protocol="ssh,telnet" depend_script="h3c_device.py"><![CDATA[display device]]></command>
+    <!--依赖关系说明：解析dir ?
+    本脚本生成的命令可以用于 cf相关信息的使用-->
+    <command protocol="ssh,telnet" depend_script="h3c_dir_cf.py"><![CDATA[dir ?]]></command>
+    <!--依赖关系说明：解析dir ?
+    本脚本生成的命令可以用于 flash相关信息的使用-->
+    <command protocol="ssh,telnet" depend_script="h3c_dir_flash.py"><![CDATA[dir ?]]></command>
+    <!--依赖关系说明：解析display startup-->
+    <command protocol="ssh,telnet" depend_script="h3c_startup.py"><![CDATA[display startup]]></command>
+	
+</commands>

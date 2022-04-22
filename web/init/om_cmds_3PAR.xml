@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--采集包指令集-->
+<commands>
+    <!--整体概览指令-->
+    <command protocol="ssh"><![CDATA[showsys]]></command>
+    <command protocol="ssh"><![CDATA[showversion]]></command>
+    <command protocol="ssh"><![CDATA[showsys;showversion]]></command>
+    <command protocol="ssh"><![CDATA[shownet]]></command>
+    <command protocol="ssh"><![CDATA[shownode]]></command>
+    <command protocol="ssh"><![CDATA[showport]]></command>
+    <command protocol="ssh"><![CDATA[showcpg]]></command>
+    <command protocol="ssh"><![CDATA[showvv]]></command>
+    <command protocol="ssh"><![CDATA[showport -rcfc]]></command>
+    <command protocol="ssh"><![CDATA[showcage]]></command>
+    <command protocol="ssh"><![CDATA[showpd]]></command>
+    <command protocol="ssh"><![CDATA[showvlun]]></command>
+    <command protocol="ssh"><![CDATA[showdate]]></command>
+    <!-- add by zfw2958 begin-->
+    <command protocol="ssh"><![CDATA[showbattery]]></command>
+    <command protocol="ssh"><![CDATA[showeeprom]]></command>
+    <!-- add by zfw2958 end-->
+    <!--细节内容指令-->
+    <command protocol="ssh"><![CDATA[showport -sfp -ddm]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc node]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc cage]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc pd]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc cabling]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc network]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc port]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc rc]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc fs]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc vv]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc vlun]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc ld]]></command>
+    <command protocol="ssh"><![CDATA[checkhealth -detail -svc qos]]></command>
+    <!-- add by zfw2958 begin-->
+    <command protocol="ssh"><![CDATA[shownode -d]]></command>
+    <command protocol="ssh"><![CDATA[showcage -d]]></command>
+    <command protocol="ssh"><![CDATA[showhost -d]]></command>
+    <command protocol="ssh"><![CDATA[showcpg -sdg]]></command>
+    <command protocol="ssh"><![CDATA[showalert]]></command>
+    <command protocol="ssh"><![CDATA[statvlun -ni -iter 20]]></command>
+    <command protocol="ssh"><![CDATA[srstatvlun -btsecs 7d]]></command>
+    <!-- add by zfw2958 end-->
+    <!--存储资产信息指令-->
+    <command protocol="ssh"><![CDATA[showinventory]]></command>
+    <!-- add by zfw2958 begin-->
+    <command protocol="ssh"><![CDATA[showport -sfp -d]]></command>
+    <command protocol="ssh"><![CDATA[showcage -sfp -d]]></command>
+    <!-- add by zfw2958 end-->
+    
+    <!-- add by zfw2958 begin omks无需解析,但是需要采集-->
+    <command protocol="ssh"><![CDATA[statpd -iter 10]]></command>
+    <command protocol="ssh"><![CDATA[statpd -btsecs 7d]]></command>
+    <command protocol="ssh"><![CDATA[statcpm -iter 20]]></command>
+    <command protocol="ssh"><![CDATA[srstatcmp -full]]></command>
+    <command protocol="ssh"><![CDATA[showcage -e]]></command>
+    <command protocol="ssh"><![CDATA[showcage -sfp -ddm]]></command>
+    <command protocol="ssh"><![CDATA[showcpg -r]]></command>
+    <command protocol="ssh"><![CDATA[showcpg -sag]]></command>
+    <command protocol="ssh"><![CDATA[showcpg -s]]></command>
+    <command protocol="ssh"><![CDATA[showeeprom]]></command>
+    <command protocol="ssh"><![CDATA[showfed]]></command>
+    <command protocol="ssh"><![CDATA[showfirmwaredb]]></command>
+    <command protocol="ssh"><![CDATA[showflashcache]]></command>
+    <command protocol="ssh"><![CDATA[showhost -listdom]]></command>
+    <command protocol="ssh"><![CDATA[showhost -verbose]]></command>
+    <command protocol="ssh"><![CDATA[showlicense]]></command>
+    <command protocol="ssh"><![CDATA[showlicense -raw]]></command>
+    <command protocol="ssh"><![CDATA[shownet -d]]></command>
+    <command protocol="ssh"><![CDATA[shownodeenv]]></command>
+    <command protocol="ssh"><![CDATA[shownode -verbose]]></command>
+    <command protocol="ssh"><![CDATA[showpdata]]></command>
+    <command protocol="ssh"><![CDATA[showpatch -hist]]></command>
+    <command protocol="ssh"><![CDATA[showpd -c]]></command>
+    <command protocol="ssh"><![CDATA[showpd -e]]></command>
+    <command protocol="ssh"><![CDATA[showpd -i]]></command>
+    <command protocol="ssh"><![CDATA[showpd -s]]></command>
+    <command protocol="ssh"><![CDATA[showpeer]]></command>
+    <command protocol="ssh"><![CDATA[showportarp]]></command>
+    <command protocol="ssh"><![CDATA[showport -c]]></command>
+    <command protocol="ssh"><![CDATA[showport -i]]></command>
+    <command protocol="ssh"><![CDATA[showport -iscsi]]></command>
+    <command protocol="ssh"><![CDATA[showportisns]]></command>
+    <command protocol="ssh"><![CDATA[showport -par]]></command>
+    <command protocol="ssh"><![CDATA[showport -peer]]></command>
+    <command protocol="ssh"><![CDATA[showport -rcip]]></command>
+    <command protocol="ssh"><![CDATA[showport -rc]]></command>
+    <command protocol="ssh"><![CDATA[showrcopy -qw]]></command>
+    <command protocol="ssh"><![CDATA[showrctransport]]></command>
+    <command protocol="ssh"><![CDATA[showrsv -l scsi2]]></command>
+    <command protocol="ssh"><![CDATA[showrsv -l scsi3]]></command>
+    <command protocol="ssh"><![CDATA[showsnmpmgr]]></command>
+    <command protocol="ssh"><![CDATA[showsnmppw]]></command>
+    <command protocol="ssh"><![CDATA[showsr]]></command>
+    <command protocol="ssh"><![CDATA[showsys -d]]></command>
+    <command protocol="ssh"><![CDATA[showsysmgr]]></command>
+    <command protocol="ssh"><![CDATA[showsys -param]]></command>
+    <command protocol="ssh"><![CDATA[showsys -space]]></command>
+    <command protocol="ssh"><![CDATA[showtarget]]></command>
+    <command protocol="ssh"><![CDATA[showtocgen]]></command>
+    <command protocol="ssh"><![CDATA[showuseracl]]></command>
+    <command protocol="ssh"><![CDATA[showuserconn -d]]></command>
+    <command protocol="ssh"><![CDATA[showvasa]]></command>
+    <command protocol="ssh"><![CDATA[showversion -a -b]]></command>
+    <command protocol="ssh"><![CDATA[showvv -cpgalloc]]></command>
+    <command protocol="ssh"><![CDATA[showvv -d]]></command>
+    <command protocol="ssh"><![CDATA[showvvolsc]]></command>
+    <command protocol="ssh"><![CDATA[showvv -s]]></command>
+    <command protocol="ssh"><![CDATA[showvv -state]]></command>
+    <command protocol="ssh"><![CDATA[showfs]]></command>
+    <command protocol="ssh"><![CDATA[showfs -ad]]></command>
+    <command protocol="ssh"><![CDATA[showfsav]]></command>
+    <command protocol="ssh"><![CDATA[showfsav pol]]></command>
+    <command protocol="ssh"><![CDATA[showfsav svc]]></command>
+    <command protocol="ssh"><![CDATA[showfpg -d]]></command>
+    <command protocol="ssh"><![CDATA[showfshare nfs -d]]></command>
+    <command protocol="ssh"><![CDATA[showfsahare obj -d]]></command>
+    <command protocol="ssh"><![CDATA[showfshare smb -d]]></command>
+    <command protocol="ssh"><![CDATA[showfs -ldap]]></command>
+    <command protocol="ssh"><![CDATA[showfs -net]]></command>
+    <command protocol="ssh"><![CDATA[showfs -ntp]]></command>
+    <command protocol="ssh"><![CDATA[showvfs -d]]></command>
+    <command protocol="ssh"><![CDATA[showfsquota]]></command>
+    <command protocol="ssh"><![CDATA[showfsroute]]></command>
+    <command protocol="ssh"><![CDATA[showfstore]]></command>
+    <command protocol="ssh"><![CDATA[showfsuser -d]]></command>
+    <command protocol="ssh"><![CDATA[showfsndmp]]></command>
+    <command protocol="ssh"><![CDATA[showauthparam]]></command>
+    <command protocol="ssh"><![CDATA[showaocfg]]></command>
+    <command protocol="ssh"><![CDATA[showdomain]]></command>
+    <command protocol="ssh"><![CDATA[showdomainset]]></command>
+    <!-- add by zfw2958 end-->
+</commands>

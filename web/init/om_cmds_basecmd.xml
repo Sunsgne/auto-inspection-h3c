@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commands>
+    <!--普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display version]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device manuinfo]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display install active]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display install active verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display patch]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display patch information]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display patch-information]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display transceiver manuinfo interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mad verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display fan]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display power]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display power-supply]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display info-center]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display acl resource]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display boot-loader]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display debugging]]></command>
+</commands>

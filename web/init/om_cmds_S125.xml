@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commands>
+<!--普通指令-->
+	
+    <!--S125采集两遍的3条命令，因为要间隔至少60秒，所以在最初发一遍，后面最后再发一遍-->
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display interface]]></command>
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display mac-address mac-move]]></command>
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display stp tc]]></command>
+    <command inview="system-view,probe" outview="quit,quit" protocol="ssh,telnet" depend_script="h3c_probe_device.py" depend_script2="h3c_port_mapping.py" gather_time="true"><![CDATA[display device]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf link]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mad verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display license]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display system stable state]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display counters rate inbound interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display counters rate outbound interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display resource-monitor]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display info-center]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip interface brief]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address mac-move]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni system]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni summary]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni consistency type1 global]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni consistency type2 global]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni keepalive]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni mad verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mirroring-group local]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device manuinfo]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mad]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display transceiver diagnosis interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display drni verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mirroring-group all]]></command>
+
+    <!--普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display drni consistency-check status]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display install active]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display power verbose]]></command>
+	
+	<!--依赖指令-->
+    <command protocol="ssh,telnet" depend_script="h3c_drni_type.py"><![CDATA[display drni summary]]></command>
+	
+	<!--S125G适配新增，system-view,probe双层视图，间隔30秒采集指令，因为空等30秒浪费连接和时间，所以改为命令写两遍，与最上面发送的命令呼应-->
+    <command inview="system-view,probe" outview="quit,quit" protocol="ssh,telnet" depend_script="h3c_probe_device.py" depend_script2="h3c_port_mapping.py" gather_time="true"><![CDATA[display device]]></command>
+			 
+    <!--S125G适配新增间隔60秒采集指令，因为空等60秒浪费连接和时间，所以改为命令写两遍，与最上面发送的命令呼应-->
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display interface]]></command>
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display mac-address mac-move]]></command>
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display stp tc]]></command>
+
+    <!--S12505X-AF/S125X-AF硬件放权类检查项-->
+    <command inview="system-view,probe" outview="quit,quit" protocol="ssh,telnet" depend_script="h3c_power_fan.py"><![CDATA[display device]]></command>
+</commands>

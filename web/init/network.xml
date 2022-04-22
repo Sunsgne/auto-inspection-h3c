@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commands>
+    <!--普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display version]]></command>
+    <command protocol="ssh,telnet"><![CDATA[_display version]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device manuinfo]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display memory]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display cpu]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display cpu-usage]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display device verbose]]></command>
+	
+    <!--S125采集两遍的3条命令，因为要间隔至少60秒，所以在最初发一遍，后面最后再发一遍-->
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display interface]]></command>
+
+    <command protocol="ssh,telnet"><![CDATA[display power]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display fan]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display environment]]></command>
+    <command protocol="ssh,telnet" gather_time="true"><![CDATA[display clock]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display saved-configuration]]></command>
+    <command protocol="ssh,telnet"><![CDATA[dir]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mad verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf configuration]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf topology]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display stack members]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display current-configuration]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display irf link]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display vrrp verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display vrrp]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ftp-server]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip http]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip https]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display link-aggregation verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display arp timer aging]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display arp all count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display arp static count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display arp dynamic count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display debugging]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display info-center]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display link-aggregation summary]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display link-aggregation]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display interface loopback]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address static count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address dynamic count]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address aging-time]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip routing-table statistics]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display boot-loader]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display logbuffer summary]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display logbuffer]]></command>
+    <command protocol="ssh,telnet"><![CDATA[dir ?]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display startup]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display poe pse]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display cloud-management state]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan client]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display interface brief]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display vrrp statistics]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap-model name WA2610H-GN]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap all]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip routing-table]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display interface Vlan-interface brief]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display current-configuration interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display domain]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display cpu-usage task]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display process cpu]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display process cpu-usage]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display power-supply]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display kernel starvation configuration]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip interface brief]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display license]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display license ap]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display ip interface LoopBack brief]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display transceiver manuinfo interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mac-address mac-learning]]></command>
+
+    <!--wifi护航优化新增1条普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display cloud state]]></command>
+
+    <!--S125G适配新增普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display cpu-usage history]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display transceiver alarm interface]]></command>
+    <command protocol="ssh,telnet"><![CDATA[dir /all /all-filesystems]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mirroring-group local]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mirroring-group all]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display mad]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display stp abnormal]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display transceiver diagnosis interface]]></command>
+    <!--system-view,probe双层视图  S125G适配新增2条-->
+    <command inview="system-view,probe" outview="quit,quit" protocol="ssh,telnet"><![CDATA[display system internal version]]></command>
+
+    <!--wifi护航2.0新增11条普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap all address]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap all radio]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan client frequency-band 2.4]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan client frequency-band 5]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan client status]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan client verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display memory-threshold]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan service-template]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display process]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap statistics association-failure-record]]></command>
+    <command protocol="ssh,telnet"><![CDATA[dir core]]></command>
+
+    <!--wifi护航新页面新增2条普通指令-->
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap all verbose]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display wlan ap all radio type]]></command>
+
+    <!--普通指定-->
+    <command protocol="ssh,telnet"><![CDATA[more diagfile/diagfile.log]]></command>
+    <command protocol="ssh,telnet"><![CDATA[display memory summary]]></command>
+
+    <!--依赖关系说明：解析display device
+    本脚本生成的命令可以用于 内存利用率检查和acl资源信息的使用-->
+    <command protocol="ssh,telnet" depend_script="h3c_device.py"><![CDATA[display device]]></command>
+
+    <!--wifi护航2.0新增适配新增依赖指令-->
+    <command protocol="ssh,telnet" depend_script="h3c_wlan_service.py"><![CDATA[display wlan service-template]]></command>
+    <command protocol="ssh,telnet" depend_script="h3c_wlan_ap.py"><![CDATA[display wlan ap all]]></command>
+</commands>
